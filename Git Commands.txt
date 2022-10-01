@@ -1,3 +1,11 @@
 Git add .
 git commit -m "message"
 git push
+
+//to add a new branch
+git checkout -b <branch name>
+git push --set-upstream origin <branch name>    (for first time )
+git push (from next time)
+
+//To switch to an existing branch
+git checkout <branch name>
