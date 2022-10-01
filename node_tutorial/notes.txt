@@ -1,0 +1,19 @@
+This is my notes sections!
+node -v
+npm -v
+
+......
+npm init (this creates a package.json file which contains the package that is used in the project).
+
+......
+npm i express (this creates a express app with all the node modules).
+
+......
+npm i --save-dev nodemon (This is used to create a dev dependency which is used only during development)
+
+......
+npm uninstall nodemon (This is use to remove the dependency)
+
+......
+package.json contains the dependency
+package-local.json contains the dependency tree which contains the dependencies of all the node modules.
