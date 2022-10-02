@@ -1,1 +1,3 @@
-console.log("hello world");
+const ash = require("./second.js");
+
+console.log(ash);

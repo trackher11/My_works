@@ -1,0 +1,5 @@
+cd - to change directories
+cd .. - to move back one directory
+mkdir - to create a folder
+touch - to create files
+vi - top create files and write contents to it

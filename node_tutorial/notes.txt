@@ -17,3 +17,16 @@ npm uninstall nodemon (This is use to remove the dependency)
 ......
 package.json contains the dependency
 package-local.json contains the dependency tree which contains the dependencies of all the node modules.
+
+......
+To export anything from one file to another for ex an object use export methods 
+ex: "module.exports = objectName;"
+
+To import the object into another file use require methods 
+ex: "const variable_name = require("./file_name.js");"
+
+......
+Any node function returns the object in the form of a function
+ex function((exports,require,module,__filename,__dirname: ", __dirname)){
+   console.log("exports: ", exports,"\n require: ", require,"\n module: ", module,"\n __filename: ", __filename,"\n __dirname: ", __dirname);
+}
