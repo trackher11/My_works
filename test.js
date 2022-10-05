@@ -1,2 +1,5 @@
-var a = 2;
-console.log(a);
+function simple() {
+  console.log("this is a function");
+}
+
+console.log(simple());

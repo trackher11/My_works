@@ -22,7 +22,7 @@ package-local.json contains the dependency tree which contains the dependencies 
 To export anything from one file to another for ex an object use export methods 
 ex: "module.exports = objectName;"
 
-To import the object into another file use require methods 
+To import the object or a common function into another file use require methods 
 ex: "const variable_name = require("./file_name.js");"
 
 ......
@@ -30,3 +30,23 @@ Any node function returns the object in the form of a function
 ex function((exports,require,module,__filename,__dirname: ", __dirname)){
    console.log("exports: ", exports,"\n require: ", require,"\n module: ", module,"\n __filename: ", __filename,"\n __dirname: ", __dirname);
 }
+
+.......
+To export multiple functions use it like this:
+export function simple() {
+  console.log("this is a function");
+}
+export function simple2() {
+  console.log("this is function2");
+}
+
+and to import the same:
+import { simple, simple2 } from "./function_export.js";
+simple()
+simple2()
+
+.........
+To import all modules at once:
+import * as all from "./function_export.js";
+all.simple();
+all.simple2();

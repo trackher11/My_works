@@ -1,3 +1,3 @@
-const ash = require("./second.js");
+const ash = require("./object.js");
 
 console.log(ash);
