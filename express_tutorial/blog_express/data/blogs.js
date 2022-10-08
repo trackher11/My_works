@@ -19,6 +19,11 @@ let blogs = [
     content: "content of page 4",
     slug: "4-learn",
   },
+  {
+    title: "this is page 5",
+    content: "content of page 5",
+    slug: "5-learn",
+  },
 ];
 
 module.exports = blogs;
