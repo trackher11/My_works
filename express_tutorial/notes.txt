@@ -1,0 +1,9 @@
+....
+Path module: use this module to get the file paths
+__dirname : gives the path of the directory
+__filename : gives the path of the file
+
+.....
+app.use(express.static(path.join(__dirname, "public")));
+this creates a static website which is served on the root directory /
+public here is a folder containing a html file
