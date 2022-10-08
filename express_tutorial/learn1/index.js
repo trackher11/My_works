@@ -3,10 +3,21 @@ const path = require("path");
 // const fs = require("fs");
 const app = express();
 const port = 3000;
+
+// const ashMiddleware = (req, res, next) => {
+//   console.log("req: ", req);
+//   next();
+// };
+
 app.use(express.static(path.join(__dirname, "public")));
+// app.use(ashMiddleware);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
+});
+
+app.get("/hello/:name", (req, res) => {
+  res.send("Hello World! " + req.params.name);
 });
 
 app.get("/about", (req, res) => {

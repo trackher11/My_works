@@ -3,3 +3,8 @@ cd .. - to move back one directory
 mkdir - to create a folder
 touch - to create files
 vi - top create files and write contents to it
+
+To kill a port:
+sudo lsof -i :portNumber  (this gives the pid)
+kill PID | kill -9 PID | sudo kill -9 PID (use either of them)
+
