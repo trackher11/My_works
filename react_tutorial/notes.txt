@@ -1,0 +1,85 @@
+//using this command to creat a react app
+npx create-react-app my-app
+npx create-react-app . // this is to create in the root folder
+
+//use "npm start" after the folder all the files is installed
+
+// two main folders here are "public" and "src" to take under consideration
+->The "index.html" in the public folder ris the main page which is getting rendered
+->there is a "<div id="root"></div>" in the body section, here is the place where all the content of the website is dynamically loaded
+-> the "index.js" file in the src folder is the place where the main content starts gettin populated
+-> all the contents are pushed using the "app.js" file
+-> make all your changes to app.js file to see the changes reflected
+
+// app.js is basically a component, it is a function which returns a "JSX"
+-> JSX ex = function app(){
+    return(
+        <div> all content</div>
+    )
+}
+-> JSX is almost html return with js
+-> cetain reserved words such as class and for is replaced bu className and htmlfor
+-> JSX can return only one element like one div above
+-> if it has to return more than one then use the below ex
+    JSX ex = function app(){
+    return(
+        <>
+        <h1>hello</h1>
+        <div> all content</div>
+        </>
+    )
+}
+
+//Babel complies JSX 
+
+................................................................
+// to export a function we have two methods
+-> export by defualt ex: 
+let a = "abc", b = "xyz";
+export default a;
+->if we want to explicitly export something then we need to send it in curly braces
+export{a};
+export{b};
+
+..............................................  
+// "Props" -> this is how the value is getting passed to the JSX components
+ex: export default function Navbar(props) {
+  return (<a className="navbar-brand" href="/">
+          {props.title}
+        </a>)
+        }
+Here the props is gettings passed from where it is being called
+ex: <Navbar title="TextUtils"  />
+
+//if the value type of the props has to be predifined then it is done as below
+//string makes title as stringtype, isRequired makes it madatory
+
+ex->
+import PropTypes from "prop-types";
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string,
+};
+
+// this is how the default props is getting passed
+Navbar.defaultProps = {
+  title: "default title",
+  aboutText: "default about us",
+};
+
+................................................................
+// Use State
+this is one of the hooks used in React to edit the State
+ex -> const [text, setText] = useState("Enter text here");
+here text is the vaiable which is assigned the value "Enter text here"
+to edit this varible we should use the function setText
+ex -> setText("new val")
+
+// used an "onClick" function to change the value of this "text" on the click of the button
+// wherever the value of "text" is being changed we should use an "onChange" function 
+   The "onChange" function creates an event which can be handled as below
+   ex -> const handleOnChange = (event) => {
+    setText(event.target.value);
+  };
+
+................................................................
