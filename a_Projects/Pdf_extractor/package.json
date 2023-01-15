@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "pdf-export-images": "^1.0.9",
+    "pdf-parse": "^1.1.1"
+  }
+}
