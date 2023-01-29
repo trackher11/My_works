@@ -5,7 +5,7 @@ npx create-react-app . // this is to create in the root folder
 //use "npm start" after the folder all the files is installed
 
 // two main folders here are "public" and "src" to take under consideration
-->The "index.html" in the public folder ris the main page which is getting rendered
+->The "index.html" in the public folder is the main page which is getting rendered
 ->there is a "<div id="root"></div>" in the body section, here is the place where all the content of the website is dynamically loaded
 -> the "index.js" file in the src folder is the place where the main content starts gettin populated
 -> all the contents are pushed using the "app.js" file
@@ -18,7 +18,7 @@ npx create-react-app . // this is to create in the root folder
     )
 }
 -> JSX is almost html return with js
--> cetain reserved words such as class and for is replaced bu className and htmlfor
+-> certain reserved words such as class and for is replaced by className and htmlfor
 -> JSX can return only one element like one div above
 -> if it has to return more than one then use the below ex
     JSX ex = function app(){
@@ -52,7 +52,7 @@ Here the props is gettings passed from where it is being called
 ex: <Navbar title="TextUtils"  />
 
 //if the value type of the props has to be predifined then it is done as below
-//string makes title as stringtype, isRequired makes it madatory
+//string makes title as stringtype, isRequired makes it mandatory
 
 ex->
 import PropTypes from "prop-types";
@@ -71,7 +71,7 @@ Navbar.defaultProps = {
 // Use State
 this is one of the hooks used in React to edit the State
 ex -> const [text, setText] = useState("Enter text here");
-here text is the vaiable which is assigned the value "Enter text here"
+here text is the variable which is assigned the value "Enter text here"
 to edit this varible we should use the function setText
 ex -> setText("new val")
 
@@ -83,3 +83,20 @@ ex -> setText("new val")
   };
 
 ................................................................
+// React Router
+this is used to keep the page and just change the component 
+-> ex: import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+return (
+    <>
+      <Router>
+          <Routes>
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+      </Router>
+    </>
+  );
+Here the about page is rendered when the about button is clicked
+-> also while rendering the button insted of <a> and hred use </a> .  --- Link and to
+ex: <Link className="navbar-brand" to="/about">
+          {props.aboutText}
+        </Link>

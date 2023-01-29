@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  const [text, setText] = useState("Enter text here");
+  //   setText("New text");
+
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Upper Case", "success");
   };
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lower Case", "success");
   };
+
   const handleCamelClick = () => {
     let arr = text.split(" ");
     for (var i = 0; i < arr.length; i++) {
@@ -16,27 +22,54 @@ export default function TextForm(props) {
     }
     let newText = arr.join(" ");
     setText(newText);
+    props.showAlert("Converted to Camel Case", "success");
+  };
+
+  const handleClearClick = () => {
+    let newText = "";
+    setText(newText);
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
-  const [text, setText] = useState("Enter text here");
-  //   setText("New text");
+
+  let color = "#3e6050";
+
   return (
-    <div>
-      <h3>{props.heading}</h3>
-      <div className="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} rows="8"></textarea>
+    <>
+      <div className="container" style={{ color: props.mode === "dark" ? "white" : color }}>
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <textarea
+            className="form-control"
+            value={text}
+            onChange={handleOnChange}
+            rows="8"
+            style={{ backgroundColor: props.mode === "dark" ? "grey" : "white", color: props.mode === "dark" ? "white" : "#3e6050" }}
+          ></textarea>
+        </div>
+        <button className="btn btn-success mx-2" onClick={handleUpClick}>
+          To Uppercase
+        </button>
+        <button className="btn btn-success mx-2" onClick={handleLowClick}>
+          To Lowercase
+        </button>
+        <button className="btn btn-success mx-2" onClick={handleCamelClick}>
+          To CamelCase
+        </button>
+        <button className="btn btn-success mx-2" onClick={handleClearClick}>
+          Clear Text
+        </button>
       </div>
-      <button className="btn btn-light" onClick={handleUpClick}>
-        To Uppercase
-      </button>
-      <button className="btn btn-light" onClick={handleLowClick}>
-        To Lowercase
-      </button>
-      <button className="btn btn-light" onClick={handleCamelClick}>
-        To CamelCase
-      </button>
-    </div>
+      <div className="container my-3" style={{ color: props.mode === "dark" ? "white" : color }}>
+        <h2>My text summary</h2>
+        <p>
+          {text.split(" ").length} words and {text.length} characters.
+        </p>
+        <p>{text.split(" ").length * 0.008} minutes read.</p>
+        <h3>Preview</h3>
+        <p>{text.length > 0 ? text : "Enter your text in the box above to preview it here"}</p>
+      </div>
+    </>
   );
 }
