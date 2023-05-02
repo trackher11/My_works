@@ -1,27 +1,15 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-    border: "1px white solid",
-  });
-
-  const [btntext, setBtnTxt] = useState("Enable Dark Mode");
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setBtnTxt("Enable Dark Mode");
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnTxt("Enable Light Mode");
-    }
+export default function About(props) {
+  //   const [myStyle, setMyStyle] = useState({
+  //     color: "white",
+  //     backgroundColor: "black",
+  //     border: "1px white solid",
+  //   });
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "black" : "white",
   };
 
   return (
@@ -39,15 +27,18 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              To UpperCase
             </button>
           </h2>
           <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes
-              that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
-              You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-              within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <strong>How to convert to uppercase:</strong>
+              <ol>
+                <li>Copy the text you want to convert from the word processor you are using.</li>
+                <li>Paste the text you copied into the text area provided on the screen:</li>
+                <li>Click on the “UPPER CASE” button.</li>
+              </ol>
+              You should have your output in a few seconds:
             </div>
           </div>
         </div>
@@ -62,15 +53,18 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              To LowerCase
             </button>
           </h2>
           <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any
-              HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <strong>How to convert to lowercase:</strong>
+              <ol>
+                <li>Copy the text you want to convert from the word processor you are using.</li>
+                <li>Paste the text you copied into the text area provided on the screen:</li>
+                <li>Click on the LOWER CASE” button.</li>
+              </ol>
+              You should have your output in a few seconds:
             </div>
           </div>
         </div>
@@ -85,24 +79,27 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              To CamelCase
             </button>
           </h2>
           <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any
-              HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <strong>How to convert to camelcase:</strong>
+              <ol>
+                <li>Copy the text you want to convert from the word processor you are using.</li>
+                <li>Paste the text you copied into the text area provided on the screen:</li>
+                <li>Click on the CAMEL CASE” button.</li>
+              </ol>
+              You should have your output in a few seconds:
             </div>
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button type="button" className="btn btn-warning" onClick={toggleStyle}>
           {btntext}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
